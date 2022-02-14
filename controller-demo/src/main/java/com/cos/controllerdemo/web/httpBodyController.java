@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cos.controllerdemo.domain.User;
 
 @RestController
-public class httpBodyController {
+public class HttpBodyController {
 	
 	
-	private static final Logger log = LoggerFactory.getLogger(httpBodyController.class);
+	private static final Logger log = LoggerFactory.getLogger(HttpBodyController.class);
 
 	
 	@PostMapping("/body1")
