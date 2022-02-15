@@ -42,10 +42,10 @@ public class User {
 	private String profileImageUrl; // 사진
 	private String role; // 권한
 	
-	private LocalDateTime createData;
+	private LocalDateTime createDate;
 	
 	@PrePersist // 디비에 INSERT 되기 직전에 실행
-	public void createData() {
-		this.createData = LocalDateTime.now();
+	public void createDate() {
+		this.createDate = LocalDateTime.now();
 	}
 }
