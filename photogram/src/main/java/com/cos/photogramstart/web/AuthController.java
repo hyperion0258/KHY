@@ -51,14 +51,6 @@ public class AuthController {
 	public String signup(@Valid SignupDto signupDto, BindingResult bindingResult) { // key=value (x-www-form-urlencoded)
 		log.info(signupDto.toString());
 		
-		if(bindingResult.hasErrors()) {
-			Map<String, String> errorMap = new HashMap<>();
-			
-			for(FieldError error : bindingResult.getFieldErrors()) {
-				errorMap.put(error.getField(), error.getDefaultMessage());
-			}
-			throw new CustomValidationException("유효성 검사 실패함", errorMap);
-		} else {
 		// User <- SignupDto
 		User user = signupDto.toEntity();
 		log.info(user.toString());
@@ -67,6 +59,6 @@ public class AuthController {
 		
 		//로그를 남기는 후처리!!
 		return "auth/signin";
-		}
+		
 	}
 }
